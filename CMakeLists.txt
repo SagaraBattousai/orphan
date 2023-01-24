@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.23)
 
-project(cactuar
+project(orphan
         VERSION 0.0.1
         DESCRIPTION ""
         LANGUAGES C CXX)
@@ -25,6 +25,6 @@ endif()
 
 set(MODULE_ROOT "${PROJECT_SOURCE_DIR}/include")
 
-add_subdirectory(cactuar)
+add_subdirectory(orphan)
 add_subdirectory(bindings)
 add_subdirectory(app)
