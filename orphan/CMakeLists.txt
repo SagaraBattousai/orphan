@@ -5,14 +5,9 @@
 set(ORPHAN_MODULE_ROOT "${MODULE_ROOT}/orphan")
 
 set(cpp_sources 
-  "crypto.cpp"
-  "encoding.cpp" 
-  "functional.cpp"
   "hash.cpp" 
-  "rlp.cpp"
+  "keccak.cpp"
   "signing.cpp" 
-  "target.cpp"
-  "transaction.cpp"
   )
 
 set(c_sources 
@@ -20,18 +15,10 @@ set(c_sources
   )
 
 set(orphan_module 
-  "${ORPHAN_MODULE_ROOT}/orphan.h" # ixx"
-  "${ORPHAN_MODULE_ROOT}/orphan-crypto.h" # ixx"
-  "${ORPHAN_MODULE_ROOT}/orphan-encoding.h" # ixx"
-  "${ORPHAN_MODULE_ROOT}/orphan-functional.h" # ixx"
+  "${ORPHAN_MODULE_ROOT}/_orphanconfig.h" # ixx"
   "${ORPHAN_MODULE_ROOT}/orphan-hash.h" # ixx"
   "${ORPHAN_MODULE_ROOT}/orphan-keccak.h" # ixx"
-  "${ORPHAN_MODULE_ROOT}/orphan-rlp.h" # ixx"
-  "${ORPHAN_MODULE_ROOT}/orphan-serializer.h" # ixx"
   "${ORPHAN_MODULE_ROOT}/orphan-signing.h" # ixx"
-  "${ORPHAN_MODULE_ROOT}/orphan-target.h" # ixx"
-  "${ORPHAN_MODULE_ROOT}/orphan-transaction.h" # ixx"
-  "${ORPHAN_MODULE_ROOT}/_orphanconfig.h" # ixx"
   )
 
 add_library(orphan SHARED ${cpp_sources} ${c_sources})

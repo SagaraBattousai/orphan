@@ -1,14 +1,14 @@
-#ifndef __CACTUAR_SIGNING_H__
-#define __CACTUAR_SIGNING_H__
+#ifndef __ORPHAN_SIGNING_H__
+#define __ORPHAN_SIGNING_H__
 
 #include <cstddef>
 
-//export module cactuar:hash;
+//export module orphan:hash;
 
 #include <vector> //import <vector>;
 #include <span> //import <span>;
 
-#include <cactuar/cactuar-crypto.h>
+#include <orphan/orphan-crypto.h>
 
 //export
 namespace pulse
@@ -34,4 +34,4 @@ namespace pulse
 
 
 
-#endif //__CACTUAR_SIGNING_H__
+#endif //__ORPHAN_SIGNING_H__

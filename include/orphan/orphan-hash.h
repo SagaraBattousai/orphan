@@ -1,49 +1,25 @@
-//module;
-
-#ifndef __CACTUAR_HASH__
-#define __CACTUAR_HASH__
+#ifndef __ORPHAN_HASH_H__
+#define __ORPHAN_HASH_H__
 
 #include <cstddef>
 
-//export module cactuar:hash;
-
-#include <vector> //import <vector>;
-#include <span> //import <span>;
+#include <vector>
 #include <functional>
 
-#include <cactuar/cactuar-crypto.h>
+#include <orphan/_orphanconfig.h>
 
-//export
-namespace pulse
+namespace orphan
 {
 
-	int HashSize(HashAlgorithm hash_algo);
+    using hash_output = std::vector<std::byte>;
+    // don't like using const and/or ref inside of using/typedef
+    using hash_input = const std::vector<std::byte>&;
 
-	class HashFunction : CryptographicFunction
-	{
-	public:
+		using HashFunction = std::function<hash_output(hash_input)>;
 
-		using hash_function = 
-			std::function<CryptographicFunction::return_type(CryptographicFunction::input_type)>;
+    //Function Composition
+		ORPHAN_EXPORT_SYMBOL HashFunction operator*(HashFunction&& lhs, HashFunction&& rhs); 
 
-		HashFunction(HashAlgorithm hash_algo);
-
-		virtual CryptographicFunction::return_type
-			operator()(CryptographicFunction::input_type input) const override
-		{
-			return hash_func(input);
-		};
-
-		friend HashFunction operator*(HashFunction&& lhs, HashFunction&& rhs); //Function Composition
-
-	private:
-
-		explicit HashFunction(hash_function hash_func);
-
-		const hash_function hash_func; //shame it cant be auto
-
-	};
-
-} //namespace pulse
+} //namespace orphan
 
 #endif
