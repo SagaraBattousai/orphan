@@ -25,6 +25,10 @@ endif()
 
 set(MODULE_ROOT "${PROJECT_SOURCE_DIR}/include")
 
+if (CMAKE_SIZEOF_VOID_P GREATER_EQUAL 8)
+  set(VOID_PTR_FITS_x64 1 CACHE INTERNAL "") # Implied FORCE)
+endif ()
+
 add_subdirectory(orphan)
 add_subdirectory(bindings)
 add_subdirectory(app)

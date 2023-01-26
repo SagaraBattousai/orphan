@@ -2,25 +2,14 @@
 #include <iostream>
 #include <vector>
 #include <cstddef>
+#include <cstdint>
+#include <string>
 
-#include <orphan/orphan-keccak.h>
 
 int main()
 {
-	const char *s = "Hello World";
-
-	const std::byte *bytes = reinterpret_cast<const std::byte*>(s);
-
-	std::vector<std::byte> byte_vector{ bytes, bytes + 11 };
-
-	std::vector<std::byte> hash = orphan::Keccak256(byte_vector);
-
-	for (auto h : hash)
-	{
-		std::cout << std::hex << (int)h;
-	}
-
-	std::cout << std::endl;
-
+	std::cout << std::stoi("0xFF", nullptr, 16) << std::endl;
+	std::cout << std::stoi("FF", nullptr, 16) << std::endl;
+	std::uint_fast8_t
 	return 0;
 }
