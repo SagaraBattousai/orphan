@@ -10,7 +10,7 @@
   #ifdef ORPHAN_BUILD_DLL
 	#define ORPHAN_EXPORT_SYMBOL __declspec(dllexport)
   #else
-	#define ORPHAN_EXPORT_SYMBOL
+	#define ORPHAN_EXPORT_SYMBOL __declspec(dllimport)
   #endif
   #define ORPHAN_LOCAL_SYMBOL
 #else

@@ -4,6 +4,11 @@
 # Projecy build directories
 build/*
 unix_build/*
+docs/build/
+
+# docs out files (i.e. outputted by .in versions)
+docs/doxygen/Doxyfile
+docs/sphinx/conf.py
 
 # Prerequisites
 *.d

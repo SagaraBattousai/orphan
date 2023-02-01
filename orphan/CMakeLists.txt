@@ -7,6 +7,7 @@ set(ORPHAN_MODULE_ROOT "${MODULE_ROOT}/orphan")
 set(cpp_sources 
   "bigint.cpp"
   "hash.cpp" 
+  "integral.cpp"
   "keccak.cpp"
   "signing.cpp" 
   )
@@ -29,7 +30,7 @@ add_library(orphan SHARED ${cpp_sources} ${c_sources})
 target_compile_definitions(orphan PRIVATE ORPHAN_BUILD_DLL)
 
 target_sources(orphan PUBLIC
-  FILE_SET headers 
+  FILE_SET HEADERS
   TYPE HEADERS
   BASE_DIRS ${MODULE_ROOT}
   FILES ${orphan_module}

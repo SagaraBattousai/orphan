@@ -23,12 +23,21 @@ else()
   add_compile_options(-Wall -Wextra -pedantic) # -Werror)
 endif()
 
+set(BUILD_DOCS ON CACHE BOOL "Whether or not to build documentation.")
+
 set(MODULE_ROOT "${PROJECT_SOURCE_DIR}/include")
 
-if (CMAKE_SIZEOF_VOID_P GREATER_EQUAL 8)
-  set(VOID_PTR_FITS_x64 1 CACHE INTERNAL "") # Implied FORCE)
-endif ()
+# if (CMAKE_SIZEOF_VOID_P GREATER_EQUAL 8)
+#   set(VOID_PTR_FITS_x64 1 CACHE INTERNAL "") # Implied FORCE)
+# endif ()
 
 add_subdirectory(orphan)
 add_subdirectory(bindings)
 add_subdirectory(app)
+
+if(BUILD_DOCS)
+  add_subdirectory(docs)
+  #Do I need to add dependancies as well or is that transitive!?
+  #TODO: # add_dependencies(Doxygen orphan) ??
+endif()
+
