@@ -30,11 +30,11 @@ set(SPHINX_RELATIVE_DOXYGEN_XML_DIR "../${DOXYGEN_OUTPUT_DIRECTORY}/xml")
 
 set_doxygen_input_files(orphan)
 configure_doxygen_and_add_command()
-add_custom_target(Doxygen ALL DEPENDS ${DOXYGEN_XML_INDEX_FILE})
-add_dependencies(Doxygen orphan)
+add_custom_target(Doxygen_Orphan ALL DEPENDS ${DOXYGEN_XML_INDEX_FILE})
+add_dependencies(Doxygen_Orphan orphan)
 
 configure_sphinx_and_add_command()
-add_custom_target(Sphinx ALL DEPENDS ${SPHINX_HTML_INDEX_FILE})
-add_dependencies(Sphinx Doxygen)
+add_custom_target(Sphinx_Orphan ALL DEPENDS ${SPHINX_HTML_INDEX_FILE})
+add_dependencies(Sphinx_Orphan Doxygen_Orphan)
 
-set_target_properties(Doxygen Sphinx PROPERTIES FOLDER Docs EXCLUDE_FROM_ALL ON)
+set_target_properties(Doxygen_Orphan Sphinx_Orphan PROPERTIES FOLDER Docs EXCLUDE_FROM_ALL ON)

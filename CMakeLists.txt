@@ -23,7 +23,7 @@ else()
   add_compile_options(-Wall -Wextra -pedantic) # -Werror)
 endif()
 
-set(BUILD_DOCS ON CACHE BOOL "Whether or not to build documentation.")
+set(ORPHAN_BUILD_DOCS ON CACHE BOOL "Whether or not to build documentation.")
 
 set(MODULE_ROOT "${PROJECT_SOURCE_DIR}/include")
 
@@ -35,7 +35,7 @@ add_subdirectory(orphan)
 add_subdirectory(bindings)
 add_subdirectory(app)
 
-if(BUILD_DOCS)
+if(ORPHAN_BUILD_DOCS)
   add_subdirectory(docs)
   #Do I need to add dependancies as well or is that transitive!?
   #TODO: # add_dependencies(Doxygen orphan) ??
