@@ -5,9 +5,10 @@
 set(ORPHAN_MODULE_ROOT "${MODULE_ROOT}/orphan")
 
 set(cpp_sources 
-  "bigint.cpp"
+  # "bigint.cpp"
   "hash.cpp" 
   "integral.cpp"
+  # "core_integral.cpp"
   "keccak.cpp"
   "signing.cpp" 
   )
@@ -18,9 +19,9 @@ set(c_sources
 
 set(orphan_module 
   "${ORPHAN_MODULE_ROOT}/_orphanconfig.h" # ixx"
-  "${ORPHAN_MODULE_ROOT}/orphan-bigint.h" # ixx"
   "${ORPHAN_MODULE_ROOT}/orphan-hash.h" # ixx"
   "${ORPHAN_MODULE_ROOT}/orphan-integral.h" # ixx"
+  # "${ORPHAN_MODULE_ROOT}/core/orphan_core-integral.h" # ixx"
   "${ORPHAN_MODULE_ROOT}/orphan-keccak.h" # ixx"
   "${ORPHAN_MODULE_ROOT}/orphan-signing.h" # ixx"
   )

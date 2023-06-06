@@ -11,6 +11,9 @@ Welcome to Orphan's documentation!
   :caption: Contents:
 
   orphan/integral
+  
+.. 
+  orphan/integral_core
    
 
 

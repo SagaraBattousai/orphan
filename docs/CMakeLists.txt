@@ -38,3 +38,4 @@ add_custom_target(Sphinx_Orphan ALL DEPENDS ${SPHINX_HTML_INDEX_FILE})
 add_dependencies(Sphinx_Orphan Doxygen_Orphan)
 
 set_target_properties(Doxygen_Orphan Sphinx_Orphan PROPERTIES FOLDER Docs EXCLUDE_FROM_ALL ON)
+

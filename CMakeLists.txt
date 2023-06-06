@@ -18,7 +18,7 @@ include(LibUtils)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 if (MSVC)
-  add_compile_options(/W4) # /WX)
+  add_compile_options(/W4 /permissive) # /WX)
 else()
   add_compile_options(-Wall -Wextra -pedantic) # -Werror)
 endif()
