@@ -5,6 +5,9 @@
 build/*
 unix_build/*
 
+# Python byproducts
+__pycache__/
+
 # Prerequisites
 *.d
 
