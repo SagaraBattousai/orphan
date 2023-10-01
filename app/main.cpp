@@ -4,14 +4,14 @@
 #include <cstddef>
 #include <cstdint>
 
-#include <orphan/orphan-bigint.h>
+#include <orphan/orphan-integral.h>
 #include <orphan/orphan-integral.h>
 
 
 int main()
 {
-	orphan::BigInt x{ (unsigned long long) 32 };
-	orphan::BigInt y{ (unsigned long long) 154 };
+	orphan::Integral x{ (unsigned long long) 32 };
+	orphan::Integral y{ (unsigned long long) 154 };
 
 	char z = 4 << (unsigned)3;
 
