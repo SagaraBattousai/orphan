@@ -1,23 +1,21 @@
 
 #include <iostream>
-#include <cmath>
+#include <vector>
+#include <cstddef>
 #include <cstdint>
-#include <cactuar/cactuar-sha.h>
+
+#include <orphan/orphan-integral.h>
+#include <orphan/orphan-integral.h>
 
 
 int main()
 {
-	//std::uint64_t mult = (std::uint64_t)1 << 32;
-	//double x;
-	//double msr = modf(sqrt(2), &x);
+	orphan::Integral x{ (unsigned long long) 32 };
+	orphan::Integral y{ (unsigned long long) 154 };
 
-	//double mmsr = sqrt(2) - ((int)(sqrt(2)));
+	char z = 4 << (unsigned)3;
 
-  double sr = cactuar::placeholder();
-
-	std::cout << std::sqrt(2) << " - " << sr << " = " << (std::sqrt(2) - sr) << std::endl;
-
-
+	std::cout << (x+y) << " = " << 32 + 154 << std::endl;
 
 	return 0;
 }
